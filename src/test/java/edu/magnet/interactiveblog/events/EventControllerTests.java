@@ -82,7 +82,8 @@ public class EventControllerTests {
                         links(
                                 linkWithRel("self").description("link to self"),
                                 linkWithRel("query-events").description("link to query-events"),
-                                linkWithRel("update-event").description("link to update-event")
+                                linkWithRel("update-event").description("link to update-event"),
+                                linkWithRel("profile").description("link to profile")
                         ),
                         requestHeaders (
                                 headerWithName(HttpHeaders.ACCEPT).description("accept header"),
@@ -121,7 +122,8 @@ public class EventControllerTests {
                                 fieldWithPath("eventStatus").description("eventStatus of new Event"),
                                 fieldWithPath("_links.self.href").description("self link to new Event"),
                                 fieldWithPath("_links.query-events.href").description("query-events link to new Event"),
-                                fieldWithPath("_links.update-event.href").description("update-event link to new Event")
+                                fieldWithPath("_links.update-event.href").description("update-event link to new Event"),
+                                fieldWithPath("_links.profile.href").description("link to profile")
                          )
         ));
     }
