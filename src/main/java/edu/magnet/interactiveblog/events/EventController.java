@@ -1,5 +1,6 @@
 package edu.magnet.interactiveblog.events;
 
+import edu.magnet.interactiveblog.common.ErrorResource;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
@@ -37,7 +38,7 @@ public class EventController {
     @PostMapping
     public ResponseEntity createEvent(@RequestBody @Valid EventDto eventDto, Errors errors) {
         if(errors.hasErrors()){
-            return ResponseEntity.badRequest().body(errors);
+            return ResponseEntity.badRequest().body(new ErrorResource((Error) errors));
         }
 
         eventValidator.validate(eventDto, errors);
