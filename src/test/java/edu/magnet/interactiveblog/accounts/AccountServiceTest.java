@@ -1,6 +1,5 @@
 package edu.magnet.interactiveblog.accounts;
 
-import org.assertj.core.api.Assertions;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
 import org.junit.Test;
@@ -18,7 +17,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
