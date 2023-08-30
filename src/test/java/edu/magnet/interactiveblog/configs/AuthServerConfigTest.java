@@ -2,9 +2,9 @@ package edu.magnet.interactiveblog.configs;
 
 import edu.magnet.interactiveblog.accounts.AccountService;
 import edu.magnet.interactiveblog.common.AppProperties;
-import edu.magnet.interactiveblog.common.BaseControllerTest;
-import edu.magnet.interactiveblog.common.TestDescription;
+import edu.magnet.interactiveblog.common.BaseTest;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
@@ -13,14 +13,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class AuthServerConfigTest extends BaseControllerTest {
+public class AuthServerConfigTest extends BaseTest {
     @Autowired
     AccountService accountService;
     @Autowired
     AppProperties appProperties;
 
     @Test
-    @TestDescription("인증토큰 발급받는 테스트")
+    @DisplayName("인증토큰 발급받는 테스트")
     public void getAuthToken() throws Exception {
         String clientId = appProperties.getClientId();
         String clientSecret = appProperties.getClientSecret();

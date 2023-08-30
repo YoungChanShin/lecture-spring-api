@@ -1,6 +1,8 @@
 package edu.magnet.interactiveblog.events;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import edu.magnet.interactiveblog.accounts.Account;
+import edu.magnet.interactiveblog.accounts.AccountSerializer;
 import lombok.*;
 
 import javax.persistence.*;
@@ -27,6 +29,7 @@ public class Event {
         @Enumerated(EnumType.STRING)
         private EventStatus eventStatus = EventStatus.DRAFT;
         @ManyToOne
+        @JsonSerialize(using = AccountSerializer.class)
         private Account manager;
 
         public void update() {
